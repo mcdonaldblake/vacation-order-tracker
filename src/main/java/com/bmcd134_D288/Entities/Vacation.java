@@ -34,7 +34,7 @@ public class Vacation {
     private BigDecimal travel_price;
 
     @Column(name = "image_url")
-    private String image_url;
+    private String image_URL;
 
     @Column(name = "create_date")
     private LocalDateTime create_date;
