@@ -51,6 +51,17 @@ public class Cart {
     orphanRemoval = true)
     private Set<CartItem> cartItems = new HashSet<>();
 
+    public void add(CartItem item) {
+
+        if (item != null) {
+            if (cartItems == null) {
+                cartItems = new HashSet<>();
+            }
+            cartItems.add(item);
+            item.setCart(this);
+        }
+    }
+
 
 
 
