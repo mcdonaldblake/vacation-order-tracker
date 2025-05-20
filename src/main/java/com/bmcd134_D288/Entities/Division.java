@@ -29,8 +29,8 @@ public class Division {
     @Column(name = "last_update")
     private LocalDateTime last_update;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "country_id", nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "country_id", nullable = false, insertable = false, updatable = false)
     private Country country;
 
     @OneToMany(mappedBy = "division",
@@ -38,5 +38,11 @@ public class Division {
     orphanRemoval = true)
     private Set<Customer> customers = new HashSet<>();
 
+    @Column(name = "country_id")
+    private long country_id;
+    public void setCountry(Country country) {
+        this.country = country;
+        setCountry_id(country.getId());
+    }
 }
 

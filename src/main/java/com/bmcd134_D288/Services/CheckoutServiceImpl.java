@@ -24,6 +24,9 @@ public class CheckoutServiceImpl implements CheckoutService {
     @Override
     @Transactional
     public PurchaseResponse placeOrder(Purchase purchase) {
+        if (purchase == null || purchase.getCartItems() == null || purchase.getCartItems().isEmpty()) {
+            throw new IllegalArgumentException("Purchase cannot be null");
+        }
 
         Cart cart = purchase.getCart();
 

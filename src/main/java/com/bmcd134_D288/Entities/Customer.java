@@ -1,7 +1,9 @@
 package com.bmcd134_D288.Entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
+import org.antlr.v4.runtime.misc.NotNull;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -18,22 +20,27 @@ public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 
-    @Column(name = "customer_id")
+    @Column(name = "customer_id",  nullable = false)
     private long id;
 
-    @Column(name = "first_name")
+    @NotBlank(message = "First Name is required")
+    @Column(name = "first_name", nullable = false)
     private String firstName;
 
-    @Column(name = "last_name")
+    @NotBlank(message = "Last Name is required")
+    @Column(name = "last_name", nullable = false)
     private String lastName;
 
-    @Column(name = "address")
+    @NotBlank(message = "Address is required")
+    @Column(name = "address",  nullable = false)
     private String address;
 
-    @Column(name = "postal_code")
+    @NotBlank(message = "Postal Code is required")
+    @Column(name = "postal_code",  nullable = false)
     private String postal_code;
 
-    @Column(name = "phone")
+    @NotBlank(message = "Phone Number is required")
+    @Column(name = "phone",  nullable = false)
     private String phone;
 
     @Column(name = "create_date")
