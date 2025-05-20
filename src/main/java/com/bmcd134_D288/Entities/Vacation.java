@@ -19,7 +19,7 @@ import java.util.Set;
 public class Vacation {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     @Column(name = "vacation_id")
     private Long id;

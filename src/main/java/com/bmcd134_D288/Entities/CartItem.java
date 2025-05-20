@@ -11,13 +11,12 @@ import java.util.Set;
 
 @Entity
 @Table(name = "cart_items")
-@Data
 @Getter
 @Setter
 public class CartItem {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     @Column(name = "cart_item_id")
     private Long id;
@@ -27,7 +26,7 @@ public class CartItem {
     private Vacation vacation;
 
     @ManyToMany
-    @JoinTable(name = "cartitem_excursion",
+    @JoinTable(name = "excursion_cartitem",
             joinColumns = @JoinColumn(name = "cart_item_id"),
             inverseJoinColumns = @JoinColumn(name = "excursion_id")
     )

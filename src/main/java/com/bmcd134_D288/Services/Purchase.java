@@ -27,6 +27,6 @@ public class Purchase {
     private Cart cart;
 
     @Valid
-    @NotEmpty(message = "You must order at least one item")
+    @NotNull(message = "You must order at least one item")
     private Set<CartItem> cartItems;
 }

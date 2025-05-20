@@ -16,7 +16,7 @@ import java.util.Set;
 public class Division {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "division_id")
     private long id;
 

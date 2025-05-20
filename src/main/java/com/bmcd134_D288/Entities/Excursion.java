@@ -16,7 +16,7 @@ import java.util.Set;
 public class Excursion {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "excursion_id")
     private Long id;
 
