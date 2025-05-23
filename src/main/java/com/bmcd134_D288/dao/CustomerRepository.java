@@ -6,4 +6,5 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 @CrossOrigin
 public interface CustomerRepository extends JpaRepository<Customer,Long> {
+    boolean existsByFirstNameAndAddress(String firstName, String address);
 }
