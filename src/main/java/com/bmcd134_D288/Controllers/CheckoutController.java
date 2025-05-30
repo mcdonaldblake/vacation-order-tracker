@@ -8,7 +8,7 @@ import jdk.jfr.Percentage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api/checkout")
 public class CheckoutController {
@@ -20,7 +20,7 @@ public class CheckoutController {
         this.checkoutService = checkoutService;
     }
 
-    @PostMapping("/purchase")
+    @PostMapping("/api/checkout/purchase")
     public PurchaseResponse placeOrder(@RequestBody @Valid Purchase purchase) {
 
         PurchaseResponse purchaseResponse = checkoutService.placeOrder(purchase);
